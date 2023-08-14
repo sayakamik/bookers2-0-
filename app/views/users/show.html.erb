@@ -1,0 +1,26 @@
+<!-- ユーザーの詳細 -->
+<div>
+  <h1>User info</h1>
+  <%= image_tag @user.get_profile_image(100,100) %><br>
+  <h3>name</h3>
+  <h3><%= @user.name %></h3>
+  <h3>introduction</h3>
+  <h3><%= @user.introduction %></h3>
+</div>
+
+<!-- ユーザーの投稿一覧 -->
+<h1>Books</h1>
+<table>
+  <tr>
+    <th><p>Title</p></th>
+    <th><p>Opinion</p></th>
+  </tr>
+  <% current_user.@books.each do |book| %>
+  <tr>
+    <td><span><%= profile_image %></span></td>
+    <td><span><%= book.title %></span></td>
+    <td><span><%= book.body %></span></td>
+  </tr>
+</table>
+
+<% end %>
